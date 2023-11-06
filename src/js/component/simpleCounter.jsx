@@ -13,7 +13,7 @@ const SimpleCounter = (props) => {
 			<div className="seconds hundred">{props.hundredsDigit}</div>
 			<div className="seconds tens">{props.tensDigit}</div>
 			<div className="seconds ones">{props.onesDigit}</div>
-			<div className="dot">.</div>
+			<div className="dot">'</div>
 			<div className="seconds fraction">{props.fractionDigit}</div>
 		</div>	
 		</div>
