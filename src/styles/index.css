@@ -1,3 +1,25 @@
+.counter-display {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 10px;
+
+}
+.counter-display div{
+    display: inline-block;
+    font-size: 100px;
+    background-color: rgb(85, 79, 79);
+    color: white;
+    border-radius: 8px;
+    width: 80px;
+}
+
+.bi-clock {
+    width: 50px;
+    height: 50px;
+}
+.dot div{
+    width: 8px;
+
+}
 
 /* 
 
