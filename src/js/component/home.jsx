@@ -7,19 +7,27 @@ import calculateSeconds from './lib'
 //create your first component
 const Home = () => {
 	const [counter, setCounter] = useState(0);
-	const isRunning = useState(true);
+	const [isRunning, setIsRunning] = useState(true);
 
-	useEffect(()=> {
-		const interval = setInterval (() => {
-			setCounter( counter => counter + 1);
-			}, 100)
-			console.log(counter)
-			return ()=> clearInterval(interval);
-		
-	}, [isRunning])
-
-	const resetCounter = () => {
+	useEffect(() => {
+		let interval;
+	
+		if (isRunning) {
+		  interval = setInterval(() => {
+			setCounter((counter) => counter + 1);
+		  }, 100);
+		}
+	
+		return () => clearInterval(interval);
+	  }, [isRunning]);
+	
+	  const resetCounter = () => {
 		setCounter(0);
+		setIsRunning(true); // Start the counter when resetting
+	  };
+	
+	  const stopCounter = () => {
+		setIsRunning(false);
 	  };
 	
 
@@ -38,6 +46,7 @@ const Home = () => {
 
 		<div className="buttons">
 			<button onClick={resetCounter}>Reset</button>
+			<button onClick={stopCounter}>stop</button>
 		</div>
 
 		</>
