@@ -18,6 +18,18 @@
     padding-top: 40px;
 }
 
+button{
+    color: rgb(226, 243, 227);
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+.buttons{
+    display: center;
+    text-align: center;
+}
 
 /* 
 

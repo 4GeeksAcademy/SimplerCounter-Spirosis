@@ -7,17 +7,23 @@ import calculateSeconds from './lib'
 //create your first component
 const Home = () => {
 	const [counter, setCounter] = useState(0);
+	const isRunning = useState(true);
 
 	useEffect(()=> {
 		const interval = setInterval (() => {
-			setCounter( counter => counter +1);
+			setCounter( counter => counter + 1);
 			}, 100)
 			console.log(counter)
 			return ()=> clearInterval(interval);
 		
-	}, [counter])
+	}, [isRunning])
 
+	const resetCounter = () => {
+		setCounter(0);
+	  };
+	
 
+	
 
 	return (
 		<>
@@ -29,6 +35,11 @@ const Home = () => {
 			fractionDigit = {calculateSeconds(counter, 1)}	
 			
 			/>
+
+		<div className="buttons">
+			<button onClick={resetCounter}>Reset</button>
+		</div>
+
 		</>
 	);
 };
